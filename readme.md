@@ -2,12 +2,12 @@
 
 [![Production Workflow](https://github.com/kaw393939/docker_flask/actions/workflows/prod.yml/badge.svg)](https://github.com/sb232/IS601_Project_1/actions/workflows/prod.yml)
 
-* [Production Deployment](https://sb232-prod.herokuapp.com/)
+* [Production Deployment](https://sumana-prod.herokuapp.com/)
 
 
 [![Development Workflow](https://github.com/kaw393939/docker_flask/actions/workflows/dev.yml/badge.svg)](https://github.com/sb232/IS601_Project_1/actions/workflows/dev.yml)
 
-* [Developmental Deployment](https://sb232-dev.herokuapp.com/)
+* [Developmental Deployment](https://sumana-dev.herokuapp.com/)
 
 ## Setting up CI/CD
 
