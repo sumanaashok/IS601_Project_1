@@ -1,4 +1,109 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 2
+    <h2>Docker</h2>
+    <div class="row">
+        <div class="col-8">
+            <p>
+            <h5>Image</h5>
+            <br>
+            A Docker Image is a template that contains the application, and all the dependencies required to run that
+            application on Docker quickly and reliably.
+            In other words a docker container image is an executable package that includes the code, runtime, system
+            tools,
+            system libraries and settings.
+            </br>
+            </p>
+            <p>
+            <h5>Container</h5>
+            <br>
+            A Docker Container is a logical entity.it is a running instance of the Docker Image.
+            Container images become containers at runtime and in the case of Docker containers - images become
+            containers
+            when they run on docker engine.
+            </br>
+            </p>
+
+            <p>
+            <h5>Docker Hub Repositories</h5>
+            <br>
+            Docker Hub repositories allow you share container images with your team, customers, or the Docker community
+            at
+            large.
+            docker push command is used to push the docker images to docker hub.One docker repository can hold multiple
+            images.
+            The local docker image must be named using the docker hub username and repo name to push an image to docker
+            hub.
+            We can use &lt;:tag&gt; to add multiple images to the repository like:
+            docker tag existing-image&gt; &lt;hub-user&gt;/&lt;repo-name&gt;[:&lt;tag&gt;]"
+            Once its tagged we can push the image by using the command
+            docker push &lt;hub-user&gt;/&lt;repo-name&gt;:&lt;tag&gt;"
+            </br>
+
+            </p>
+
+            <p>
+            <h5>Docker Commands</h5>
+            <br>
+            1. docker compose up --build
+            This command builds images in the docker-compose.yml file and starts the containers.
+            The build command gets the images ready to create containers. If images are already built, it will fork the
+            container directly.
+            This command does the work of both docker compose build and docker compose run.
+            2. docker ps. This command is used to list the running containers
+            3. docker ps -a This command shows all the running and exited containers
+            4. docker stop This command stops the running container
+            5. docker kill when a container is taking too long to stop the kill command can be used to terminate it
+            immediately.
+            6. docker run -it -d &lt;image name&gt; is used to start a container from a docker image example : docker
+            run -d
+            -p 80:80 sb232/first-website:latest runs the latest version of first-website on port 80:80. -d option helps
+            to
+            keep the container running when you exit the terminal session,
+            7. docker build . -t docker_flask-master builds the docker image for docker_flask-master
+            8. docker pull &lt;image name&gt; is used to pull images from docker hub repository.
+            9. docker login is used to login to docker hub
+            10. docker push [OPTIONS] NAME[:TAG] is used to push images to docker hub.
+            11. docker exec &lt;options&gt; &lt;container&gt; &lt;command&gt; this command runs a new command in a
+            running
+            container.
+            Example docker exec -it 3d917a898078 bash - this launches a terminal within the running container.
+            12. Docker logs - batch-retrieves logs present at the time of execution.
+            </br>
+
+
+            </p>
+
+            <p>
+            <h5>Steps to start a project and accessing container from terminal.</h5>
+            <br>
+            - In the terminal , navigate to the folder where the project is located and run the command: docker ps to
+            check
+            which containers are already running.
+            - Then run docker build . -t project_name. This will build the image for the project ready to create
+            containers.
+            - Next run , docker run -dp 3000:3000 project_name to start the container at port 3000
+            - To check if the project is running go to localhost:3000.
+            - To access the container when its running , do a docker ps to get the id of the docker container and then
+            run :
+            docker exec -it &lt;container&gt; bash. This will open a terminal inside the container.
+            </br>
+            </p>
+        </div>
+
+        <div class="col">
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Link to the project repository on docker hub</h5>
+                    <p><a href="https://hub.docker.com/repository/docker/sb232/docker_flask">Docker Hub</a></p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
 {% endblock %}

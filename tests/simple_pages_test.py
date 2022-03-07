@@ -25,19 +25,19 @@ def test_request_page1(client):
 def test_request_page2(client):
     response = client.get("/page2")
     assert response.status_code == 200
-    assert b"Page 2" in response.data
+    assert b"Docker" in response.data
 
 
 def test_request_page3(client):
     response = client.get("/page3")
     assert response.status_code == 200
-    assert b"Page 3" in response.data
+    assert b"Python/Flask" in response.data
 
 
 def test_request_page4(client):
     response = client.get("/page4")
     assert response.status_code == 200
-    assert b"Page 4" in response.data
+    assert b"CI/CD" in response.data
 
 def test_request_page_not_found(client):
     """This makes the index page"""
