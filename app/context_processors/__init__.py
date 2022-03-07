@@ -2,8 +2,8 @@ from os import getenv
 import datetime
 
 def utility_text_processors():
-    message = "hello world"
-
+    message = "Thank you for visiting my page"
+    name="Sumana\'s"
     def deployment_environment():
         return getenv('FLASK_ENV', None)
 
@@ -14,13 +14,14 @@ def utility_text_processors():
         return year
 
     def format_price(amount, currency="$"):
-        return f"{currency}{amount:.2f}"
+        return "{currency}{amount:.2f}"
 
     return dict(
         mymessage=message,
         deployment_environment=deployment_environment(),
         year=current_year(),
-        format_price=format_price
+        format_price=format_price,
+        name=name
     )
 
 

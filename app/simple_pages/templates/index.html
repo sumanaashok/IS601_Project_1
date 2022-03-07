@@ -1,4 +1,88 @@
 {% extends "base.html" %}
 {% block content %}
-    Index Page - Sumana Bangalore Ashok Sushanth Krishnaswamy
+
+    <div class="row">
+        <h1>Welcome To My Website!</h1>
+        <p>Click on the slides below to see my notes and explanation of the technologies i have learnt in the course IS601. </p>
+    </div>
+
+    <div class="row border border-primary mb-5">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a class="nav-link" href="{{ url_for('simple_pages.show', page="page1") }}">
+                        <img src="{{ url_for('static', filename='images/git.png') }}" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a class="nav-link" href="{{ url_for('simple_pages.show', page="page2") }}">
+                        <img src="{{ url_for('static', filename='images/docker.png') }}" class="d-block w-100"
+                             alt="...">
+                    </a>
+                </div>
+
+                <div class="carousel-item">
+                    <a class="nav-link" href="{{ url_for('simple_pages.show', page="page3") }}">
+                        <img src="{{ url_for('static', filename='images/python-flask.jpeg') }}" class="d-block w-100"
+                             alt="...">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a class="nav-link" href="{{ url_for('simple_pages.show', page="page4") }}">
+                        <img src="{{ url_for('static', filename='images/CICD.png') }}" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Education</h5>
+                    <p class="card-subtitle mb-2 text-muted">Jan'2021-Present</p>
+                    <p class="card-text">M.S. in Computer Science At NJIT - Ying Wu College of Computing</p>
+                    <p class="card-subtitle mb-2 text-muted">Sep'2010-Jun'2014</p>
+                    <p class="card-text">B.E. in Electronics and Telecommunication From VTU - Dayanand Sagar College of Engineering</p>
+                </div>
+            </div>
+        </div>
+     <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Work Experience</h5>
+                    <p class="card-subtitle mb-2 text-muted">Jan'2022-Present</p>
+                    <p class="card-text">TA for the graduate level course Internet and Higher Layer Protocols At NJIT - Ying Wu College of Computing</p>
+                    <p class="card-subtitle mb-2 text-muted">Jun'2014-Jul'2017</p>
+                    <p class="card-text">Software Developer working in the Business Intelligence and Data Warehousing Unit at Larsen & Toubro Infotech Limited</p>
+                </div>
+            </div>
+        </div>
+
+     <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Technical skills</h5>
+                    <p class="card-text">Languages: Java, C , Python</p>
+                    <p class="card-text">Tools: SQL Server,TalenD, Informatica, Datastage, Attunity replicate.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
 {% endblock %}
