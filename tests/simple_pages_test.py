@@ -20,7 +20,7 @@ def test_request_index(client):
 def test_request_page1(client):
     response = client.get("/page1")
     assert response.status_code == 200
-    assert b"Page 1" in response.data
+    assert b"GIT" in response.data
 
 
 def test_request_page2(client):
