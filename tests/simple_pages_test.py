@@ -25,7 +25,7 @@ def test_request_page1(client):
 def test_request_page2(client):
     response = client.get("/page2")
     assert response.status_code == 200
-    assert b"Page 2" in response.data
+    assert b"Docker" in response.data
 
 
 def test_request_page3(client):
