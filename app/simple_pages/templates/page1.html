@@ -5,118 +5,108 @@
         <div class="col-8">
             <p>
             <h5>Branches</h5>
-            <br>
-            -Branches in Git allows us to develop new features or add new features to the existing code , correct
+           <ul>
+               <li>Branches in Git allows us to develop new features or add new features to the existing code , correct
             any errors and to safely carry out experimental work on our repository.
-            </br>
-            <br>
-            -Helps us separate the new development work without affecting other branches.
-            </br>
-            <br>
-            -Branches are used to keep the master/base branch working and clean of errors.
-            </br>
-            <br>
-            -“git checkout -b” command is used to create new branches
-            </br>
-            <br>
-            -Branches can be created from existing branches
-            </br>
-            <br>
-            -Once the changes in a branch are tested and ready to be deployed , then a pull request is opened to merge
-            changes into the base/master branch.
-            </br>
-            <br>
-            -After a pull request has been merged, or closed, you can delete the head branch as this is no longer
-            needed.
-            </br>
-            <br>
-            -When there is an open pull request then that branch cannot be deleted.
-            </br>
-            <br>
-            -We can have branches that are protected. Delete or force push to the branch on such branches cannot be done
-            if you are not the repository administrator.
-            </br>
-            <br>
-            -Repository administrator can also be added to follow the rules on protected branches.
-            </br>
-            </p>
+           </li>
+
+               <li>Helps us separate the new development work without affecting other branches.</li>
+
+               <li>Branches are used to keep the master/base branch working and clean of errors.</li>
+
+            <li>“git checkout -b” command is used to create new branches</li>
+
+               <li>Branches can be created from existing branches</li>
+
+            <li>Once the changes in a branch are tested and ready to be deployed , then a pull request is opened to merge
+                changes into the base/master branch.</li>
+
+            <li>After a pull request has been merged, or closed, you can delete the head branch as this is no longer
+                needed.</li>
+
+               <li>When there is an open pull request then that branch cannot be deleted.</li>
+
+            <li>We can have branches that are protected. Delete or force push to the branch on such branches cannot be done
+                if you are not the repository administrator.</li>
+
+               <li>Repository administrator can also be added to follow the rules on protected branches.</li>
+           </ul>
 
             <p>
             <h5>Merge</h5>
-            <br>
-            -Git merge combines sequences of commits into one single history of commits.
-            </br>
-            <br>
-            -In most cases, git merge is used to combine two branches
-            </br>
-            <br>
-            -We can use git checkout to switch to the branch we want to merge into , when we need to combine
-            branches locally. This branch is typically the master/main branch.
-            </br>
-            <br>
-            -We can use git merge and specify the name of the other branch to bring into this branch.
-            </br>
-            <br>
-            -Merge Incorporates changes from the named commits (since the time their histories diverged from the
-            current branch) into the current branch.
-            </br>
+           <ul>
+               <li>Git merge combines sequences of commits into one single history of commits.</li>
+
+               <li>In most cases, git merge is used to combine two branches</li>
+
+            <li>We can use git checkout to switch to the branch we want to merge into , when we need to combine
+                branches locally. This branch is typically the master/main branch.</li>
+
+               <li>We can use git merge and specify the name of the other branch to bring into this branch.</li>
+
+            <li>Merge Incorporates changes from the named commits (since the time their histories diverged from the
+                current branch) into the current branch.</li>
+           </ul>
             </p>
 
             <p>
             <h5>Commit</h5>
-            <br>
-            -Used to record the changes made to a repository.
-            </br>
-            <br>
-            -Can be viewed as snapshot of the project's currently staged changes. Committed snapshots can be thought
-            of as safe versions of a project.
-            </br>
-            <br>
-            -By using git add command we can specify the content to be committed
-            </br>
-            <br>
-            -The -m option is used to specify a message for the commit.
-            </br>
-            <br>
-            -Once the changes are committed , they can be pushed to the remote repository from local repository.
-            </br>
+            <ul>
 
+                <li>Used to record the changes made to a repository.</li>
+
+
+            <li>Can be viewed as snapshot of the project's currently staged changes. Committed snapshots can be thought
+                of as safe versions of a project.</li>
+
+
+                <li>By using git add command we can specify the content to be committed</li>
+
+
+                <li>The -m option is used to specify a message for the commit.</li>
+
+
+                <li>Once the changes are committed , they can be pushed to the remote repository from local repository.</li>
+
+            </ul>
             </p>
 
             <p>
             <h5>Tags</h5>
-            <br>
-            -Tags are used to mark a particular in a repository’s history as important.
-            </br>
-            <br>
-            -They are be used to mark different versions of the same product.
-            </br>
-            <br>
-            -git tag lists all the tags of the repository.
-            </br>
-            <br>
-            -There are 2 types of tags light weight and annotated.
-            </br>
-            <br>
-            -Annotated tags store complete information like name, email of the tagger , date , checksum etc.
-            </br>
-            <br>
-            -Lightweight tags only store the checksum and are usually used as temporary tag.
-            </br>
+            <ul>
+
+                <li>Tags are used to mark a particular in a repository’s history as important.</li>
+
+
+                <li>They are be used to mark different versions of the same product.</li>
+
+
+                <li>git tag lists all the tags of the repository.</li>
+
+
+                <li>There are 2 types of tags light weight and annotated.</li>
+
+
+                <li>Annotated tags store complete information like name, email of the tagger , date , checksum etc.</li>
+
+
+                <li>Lightweight tags only store the checksum and are usually used as temporary tag.</li>
+
+                </ul>
 
             </p>
 
             <p>
             <h5>Repository</h5>
-            <br>
-            -A Git repository tracks and saves the history of all changes made to the files in a Git project. It
+            <ul>
+            <li>A Git repository tracks and saves the history of all changes made to the files in a Git project. It
             saves this data in a directory called . git , also known as the repository folder. Git uses a version
-            control system to track all changes made to the project and save them in the repository.
-            </br>
-            <br>
-            -Git repository can be created by either cloning an existing git repo from elsewhere or by taking a
-            local directory that is currently not under version control, and turn it into a Git repository.
-            </br>
+                control system to track all changes made to the project and save them in the repository.</li>
+
+
+            <li>Git repository can be created by either cloning an existing git repo from elsewhere or by taking a
+                local directory that is currently not under version control, and turn it into a Git repository.</li>
+            </ul>
             </p>
         </div>
 
