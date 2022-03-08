@@ -53,10 +53,10 @@
         def test_request_main_menu_links(client):
             response = client.get("/")
             assert response.status_code == 200
-            assert b'&lt;a class="nav-link" href="/page1"&gt;GIT&lt;/a&gt;' in response.data
-            assert b'&lt;a class="nav-link" href="/page2"&gt;Docker&lt;/a&gt;' in response.data
-            assert b'&lt;a class="nav-link" href="/page3"&gt;Python/Flask&lt;/a&gt;' in response.data
-            assert b'&lt;a class="nav-link" href="/page4"&gt;CI/CD&lt;/a&gt;' in response.data
+            assert b'&lt;a class="nav-link" href="/git"&gt;GIT&lt;/a&gt;' in response.data
+            assert b'&lt;a class="nav-link" href="/docker"&gt;Docker&lt;/a&gt;' in response.data
+            assert b'&lt;a class="nav-link" href="/python-flask"&gt;Python/Flask&lt;/a&gt;' in response.data
+            assert b'&lt;a class="nav-link" href="/ci-cd"&gt;CI/CD&lt;/a&gt;' in response.data
     </pre>
            This test checks if all the main menu items that appear in all pages are being linked correctly.
             </p>
