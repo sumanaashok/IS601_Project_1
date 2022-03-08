@@ -1,5 +1,8 @@
 name: Development Workflow
 
+env:
+  FLASK_ENV: 'development'
+
 on:
   pull_request:
     branches:
