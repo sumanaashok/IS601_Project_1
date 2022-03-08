@@ -1,5 +1,9 @@
-import datetime
+"""
+This file provides the test coverage for the context processors, and the variables it is injecting.
+"""
+
 from os import getenv
+import datetime
 
 
 def test_context_variables_environment(client):
