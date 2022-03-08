@@ -1,6 +1,5 @@
 name: Production Workflow
-env:
-  FLASK_ENV: 'production'
+
 on:
   push:
     branches:
