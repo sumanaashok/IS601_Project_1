@@ -1,6 +1,54 @@
 body {
-font-size: 100%;
+    font-size: 100%;
 }
 
-.smaller { line-height: 10px; }
-.larger { line-height: 20px; }
+.smaller {
+    line-height: 10px;
+}
+
+.larger {
+    line-height: 20px;
+}
+
+.item {
+    height: 300px;
+}
+
+/*.nav_item_clicked {*/
+/*    background-color: aquamarine;*/
+/*}*/
+
+.current {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/*.navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {*/
+/*        color: #F0F8FF;*/
+/*        background-color: #CD0B0B;*/
+/*    }*/
+
+/*#nav a:active, #nav a.active {*/
+/*       border: 1px solid #000;*/
+/*       background-color: yellow;*/
+/*   }*/
+
+
+/*.navbar {*/
+/*	background-color: #111;*/
+
+/*}*/
+/*.navbar a {*/
+/*	text-decoration: none;*/
+/*	color: black;*/
+/*	padding: 1rem;*/
+/*}*/
+
+/*.current {*/
+/*	color: #df3e23;*/
+/*}*/

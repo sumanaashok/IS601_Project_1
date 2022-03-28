@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>AAA Testing</h2>
+    <div class="row">
+        <div class="col-8">
+            <p>
+                AAA is an acronym that stands for Arrange / Act / Assert.
+                It is a pattern for arranging and formatting code in Test methods.
+                The idea is to develop a unit test by following these 3 simple steps:
+            <ul>
+                <li>Arrange – setup the testing objects and prepare the prerequisites for the test.</li>
+                <li>Act – perform the actual work of the test.</li>
+                <li>Assert – verify the result.</li>
+            </ul>
+            <p>For the Calculator Program , AAA testing proves to be very useful as testing provides a feedback loop for
+                development. That’s how testing keeps us safe. With tests, we know when things break.</p>
+            <p>"Pytest" if the test framework used in python to to automate tests, execute suites, and report results
+            </p>
+            <p>I have demonstrated 2 types of testing done on the calculator program below. </p>
+            </p>
+
+            <p>
+
+            <h5>Unit Testing</h5>
+            The code below shows a code snippet of AAA testing done on the add method of calculator class.
+            <p> <h6>Example 1:</h6>
+            <pre>
+        def num_list():
+             """Arranging for AAA Testing"""
+                return 1.0, 2
+
+
+        def testing_add_method():
+            """Act for AAA testing"""
+
+            result = CalculatorMain.add(num_list())
+
+            """Assert for AAA testing"""
+            assert result == 3
+        </pre>
+            </p>
+            The comments show each phase of testing.
+            <p>
+            <ul>
+                <li>
+                    The Arrange step returns a list named "num_list" with values 1.0 and 2 for testing.
+                </li>
+                <li>The Act step calls the “add” function using the “num_list” list and stores the returned value in a
+                    variable named “result”
+                </li>
+                <li>The Assert step verifies that “result” is equal to 3 (1.0+2) value.
+                </li>
+            </ul>
+            </p>
+            <h6>Example 2:</h6>
+            <pre>
+                def test_calculation_multiplication_instance():
+                    """Testing the Calculator multiply"""
+                    """Arrange"""
+                    num_list = [1, 2]
+                    """Act"""
+                    calculation = Product.create(num_list)
+                    """Assert"""
+                    assert isinstance(calculation, Product)
+        </pre>
+
+            The comments show each phase of testing.
+            <p>
+            <ul>
+                <li>
+                    The Arrange step creates a list named "num_list" with values 1 and 2 for testing.
+                </li>
+                <li>The Act step calls the “create” function of the Product class and passes “num_list” list and stores
+                    the returned value in a
+                    variable named “calculation”
+                </li>
+                <li>The Assert step verifies that “calculation” is an instance of the Product class.
+                </li>
+            </ul>
+            </p>
+
+
+            </p>
+
+            <p>
+            <h5>Feature Testing</h5>
+            Here i am explaining a test case from the simple_pages_test. The code below shows a code snippet of AAA
+            testing done to check the git page of my website using client.get
+            <p>
+            <h6>Example 3:</h6>
+            <pre>
+                def test_request_git_page(client):
+                    """This tests the git page"""
+                    """ The Arrange phase"""
+                    url_to_request = "/git"
+                    """Act Phase"""
+                    response = client.get(url_to_request)
+                    """ The Assert Phase"""
+                    assert response.status_code == 200
+                    assert b"GIT" in response.data
+    </pre>
+            </p>
+            <p>
+            <ul>
+                <li>
+                    The Arrange step passes the url ending with “git” from the website.
+                </li>
+                <li>The Act steps makes a GET request to the /git endpoint which returns the content of the git webpage.
+                </li>
+                <li>The Assert steps then verifies that the HTTP status code was 200, meaning “OK” or “success,” and
+                    that the word “GIT” appears somewhere in the response’s abstract text.
+                </li>
+            </ul>
+            </p>
+            </p>
+            <p>
+                AAA testing forces tests to focus on independent, individual behaviors. It separates setup actions from
+                the main actions and subsequent actions and assertions belong in separate tests</p>
+            <h6> Testing is important because</h6>
+            <p> Testing saves us hours of debugging. from the above test cases we can see that checking if the add
+                method is working
+                as required and checking if the "calculator" instance is being created helps us avoid situations where
+                these errors have to be fixed later on </p>
+
+        </div>
+
+        <div class="col">
+
+            <img src="{{ url_for('static', filename='images/AAAphase.jpeg') }}" class="d-block w-100 item"
+                 alt="...">
+            <br>
+            <h6>Example 1</h6>
+            <img src="{{ url_for('static', filename='images/ex1.png') }}" class="d-block w-100 item "
+                 alt="..." title="Example 1">
+
+            <br>
+            <h6>Example 2</h6>
+            <img src="{{ url_for('static', filename='images/ex2.png') }}" class="d-block w-100 item"
+                 alt="..." title="Example 2">
+
+            <br>
+            <h6>Example 3</h6>
+            <img src="{{ url_for('static', filename='images/ex3.png') }}" class="d-block w-100 item"
+                 alt="..." title="Example 2">
+
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h6 class="card-title">To find more test cases like example 1 go to</h6>
+                    <p class="card-text"> tests -> calculator_test.py</p>
+                    <h6 class="card-title">To find more test cases like example 2 go to</h6>
+                    <p class="card-text"> tests -> calculations_test.py</p>
+                    <h6 class="card-title">To find more test cases like example 3 go to</h6>
+                    <p class="card-text"> tests -> sample_pages_test.py</p>
+                </div>
+            </div>
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">To run the tests</h5>
+                    <p class="card-text"> execute the command "pytest" in the terminal</p>
+                </div>
+            </div>
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Reference Link</h5>
+                    <p>
+                        <a href=https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/>AAA
+                            testing</a></p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+{% endblock %}
