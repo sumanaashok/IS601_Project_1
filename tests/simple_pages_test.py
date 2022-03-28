@@ -11,6 +11,7 @@ def test_request_main_menu_links(client):
     assert b'<a class="nav-link" href="/docker">Docker</a>' in response.data
     assert b'<a class="nav-link" href="/python-flask">Python/Flask</a>' in response.data
     assert b'<a class="nav-link" href="/ci-cd">CI/CD</a>' in response.data
+    assert b'<a class="nav-link" href="/OOP">OOP</a>' in response.data
 
 
 def test_request_index(client):
@@ -22,7 +23,11 @@ def test_request_index(client):
 
 def test_request_git_page(client):
     """This tests the git page"""
-    response = client.get("/git")
+    # The Arrange phase
+    url_to_request = "/git"
+    # Act Phase
+    response = client.get(url_to_request)
+    # The Assert Phase
     assert response.status_code == 200
     assert b"GIT" in response.data
 
@@ -46,6 +51,13 @@ def test_request_ci_cd(client):
     response = client.get("/ci-cd")
     assert response.status_code == 200
     assert b"CI/CD" in response.data
+
+
+def test_request_oop(client):
+    """This tests the OOP page"""
+    response = client.get("/OOP")
+    assert response.status_code == 200
+    assert b"OOP" in response.data
 
 
 def test_request_page_not_found(client):

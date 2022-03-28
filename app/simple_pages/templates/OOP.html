@@ -1,0 +1,342 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>OOP Glossary</h2>
+    <div class="row">
+        <div class="col-8">
+            <p>
+            <img src="{{ url_for('static', filename='images/oop_page.png') }}" class="d-block w-100 item mt-5"
+                 alt="...">
+            <p>
+                Object-oriented programming (OOP) is a computer programming model that organizes software design around
+                data, or objects, rather than functions and logic. An object can be defined as a data field that has
+                unique attributes and behavior. In this page I have basic definitions for various common terms used in
+                object-oriented programming
+                and have also discussed the 4 main principles of OOP : Encapsulation, Abstraction, Inheritance, and
+                Polymorphism.
+            </p>
+
+            <h5>Class</h5>
+
+            <p>A class is a collection of objects. A class contains the blueprints or the prototype from which the
+                objects are being created. It is a logical entity that contains some attributes and methods.
+            </p>
+
+            <h5>Object</h5>
+            <p>
+                The object is an entity that has a state and behavior associated with it. It may be any real-world
+                object like a mouse, keyboard, chair, table, pen, etc. Integers, strings, floating-point numbers,
+                even
+                arrays, and dictionaries, are all objects. More specifically, any single integer or any single
+                string is
+                an object. The number 4 is an object, the string “Hi! how are you?” is an object, a list is an
+                object
+                that
+                can hold other objects.
+
+            </p>
+            <h5>Instantiation</h5>
+            <p>
+                Instantiation refers to the creation of an object (or an “instance” of a given class) in an
+                object-oriented programming (OOP) language. Referencing a class declaration, an instantiated object
+                is
+                named and created, in memory or on disk
+
+            </p>
+            <h5>Namespace</h5>
+            <p>
+
+                A namespace is a declarative region that provides a scope to the identifiers (the names of types,
+                functions, variables, etc) inside it.
+                A namespace is a system that has a unique name for each and every object. An object might be a
+                variable or a method. Python itself maintains a namespace in the form of a Python dictionary. for
+                example, a directory-file system structure in computers. Needless to say, that one can have
+                multiple directories having a file with the same name inside every directory. But one can get
+                directed
+                to the file, one wishes, just by specifying the absolute path to the file.
+
+            </p>
+
+            <h5>Constructor</h5>
+            <ul>
+                <li>
+                    Constructors are generally used for instantiating an object. The task of constructors is to
+                    initialize(assign values) to the data members of the class when an object of the class is created.
+                    In
+                    Python the __init__() method is called the constructor and is always called when an object is
+                    created.
+                </li>
+                <li>There are two types of constructors in python: Default and Parameterized</li>
+            </ul>
+
+            <h5>Fixtures</h5>
+            <p>Fixtures are functions, which will run before each test function to which it is applied. Fixtures are
+                used to feed some data to the tests such as database connections, URLs to test and some sort of input
+                data. Fixtures are used to make sure that consistent data is fed to the functions. </p>
+            <h5>Type Hint</h5>
+            <p>Type hint is a formal solution to statically indicate the type of a value. Type hints will help document
+                code. The idea of hints is —they have no runtime effect, they're only hints and are not enforced
+                on their own</p>
+
+            <h5>Type cast</h5>
+            <p>Typecasting, or type conversion, is a method of changing an entity from one data type to another. It is
+                used in computer programming to ensure variables are correctly processed by a function. An example of
+                typecasting is converting an integer to a string.</p>
+
+            <h5>Unit test</h5>
+            <p> Unit testing is a technique in which particular module is tested to check by developer himself whether
+                there are any errors. The primary focus of unit testing is test an individual unit of system to analyze,
+                detect, and fix the errors.</p>
+
+            <h5>Static</h5>
+            <p> In object-oriented programming, there is also the concept of a static member variable, which is a "class
+                variable" of a statically defined class, i.e., a member variable of a given class which is shared across
+                all instances (objects), and is accessible as a member variable of these objects.</p>
+
+            <h5>Instance Method</h5>
+            <p> An instance method is a method that belongs to instances of a class, not to the class itself. To define
+                an instance method, just omit static from the method heading. Within the method definition, you refer to
+                variables and methods in the class by their names, without a dot.</p>
+
+
+            <h5>Instance Property</h5>
+            <p> Classes and objects have attributes. Attributes are data stored
+                inside a class or instance and represent the state or quality of the class or instance.
+                This is known as instance property.</p>
+
+            <h5> Static Method</h5>
+            <p>
+                The methods that belong to a class definition are called static methods. A static method is part of a
+                class definition, but is not part of
+                the objects it creates. A program can execute a static method without first creating an object! All
+                other methods
+                (those that are not static) exist only when they are part of an object. So an object must be created
+                before they can be executed.
+            </p>
+
+            <h5> Static Property</h5>
+            <p>
+                When we declare a variable inside a class but outside any method, it is called as class or static
+                variable in python. Class or static variable can be referred through a class but not directly through an
+                instance
+            </p>
+
+
+            <h5> Encapsulation</h5>
+            <p>
+                Encapsulation refers to the bundling of data, along with the methods that operate on that data, into a
+                single unit.
+                This puts restrictions on accessing variables and methods directly and can prevent the accidental
+                modification of data. To prevent accidental change, an object’s variable can only be changed by an
+                object’s method. Those types of variables are known as private variables.
+
+                A class is an example of encapsulation as it encapsulates all the data that is member functions,
+                variables,
+
+            </p>
+
+            <h5> Inheritance</h5>
+            <p>
+                Inheritance is a mechanism where you can to derive a class from another class for a hierarchy of classes
+                that share a set of attributes and methods
+                It provides re-usability of a code. We don’t have to write the same code again and again. Also, it
+                allows us to add more features to a class without modifying it.
+                It is transitive in nature, which means that if class B inherits from another class A, then all the
+                subclasses of B would automatically inherit from class A.
+
+            </p>
+
+            <h5> Polymorphism</h5>
+            <p>
+                Polymorphism is the ability of a programming language to present the same interface for several
+                different underlying data types. Polymorphism is the ability of different objects to respond in a unique
+                way to the same message.
+                The same function name (but different signatures) being used for different types.
+            </p>
+            <p>
+                Polymorphism lets us define methods in the child class that have the same name as the methods in the
+                parent class. In inheritance, the child class inherits the methods from the parent class. However, it is
+                possible to modify a method in a child class that it has inherited from the parent class. This is
+                particularly useful in cases where the method inherited from the parent class doesn’t quite fit the
+                child class. In such cases, we re-implement the method in the child class. This process of
+                re-implementing a method in the child class is known as Method Overriding.
+            </p>
+
+            <h5> Abstraction</h5>
+            <p>
+
+                Abstraction is the concept of object-oriented programming that “shows” only essential attributes and
+                “hides” unnecessary information. The main purpose of abstraction is hiding the unnecessary details from
+                the users. Abstraction is selecting data from a larger pool to show only relevant details of the object
+                to the user. It helps in reducing programming complexity and efforts.
+                An abstract class can be considered as a blueprint for other classes. It allows you to create a set of
+                methods that must be created within any child classes built from the abstract class. A class which
+                contains one or more abstract methods is called an abstract class. An abstract method is a method that
+                has a declaration but does not have an implementation.
+            </p>
+
+
+            <h5>SOLID principles of object-oriented design.</h5>
+            <p>
+
+                Design principles encourage us to create more maintainable, understandable, and flexible software.
+                Consequently,
+                as our applications grow in size, we can reduce their complexity and save us from a lot of troubles
+                further down
+                the road!
+                Projects that adhere to SOLID principles can be shared with collaborators, extended, modified, tested,
+                and
+                refactored with fewer complications.
+            </p>
+            <p>SOLID is an acronym that stands for
+            <ul>
+                <li>S:Single Responsibility principle</li>
+                <li>O:Open/Closed principle</li>
+                <li>L:Liskov Substitution principle</li>
+                <li>I:Interface Segregation principle</li>
+                <li>D:Dependency Inversion principle</li>
+            </ul>
+            </p>
+
+            <h6>Single Responsibility principle:</h6>
+            <p>
+                Single-responsibility Principle (SRP) states:
+                A class should have one and only one reason to change, meaning that a class should have only one job.
+            </p>
+
+            <h6>Open-Closed Principle</h6>
+            <p>
+                Open-closed Principle (OCP) states:
+                Objects or entities should be open for extension but closed for modification.
+                This means that a class should be extendable without modifying the class itself.
+            </p>
+
+            <h6>Liskov Substitution Principle</h6>
+            <p>
+                Liskov Substitution Principle states:
+                Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y
+                of type S
+                where S is a subtype of T.
+                This means that every subclass or derived class should be substitutable for their base or parent class.
+            </p>
+            <h6>Interface Segregation Principle</h6>
+            <p>
+                Interface segregation principle states:
+                A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be
+                forced to
+                depend on methods they do not use.
+            </p>
+            <h6>Dependency Inversion Principle</h6>
+            <p>
+                Dependency inversion principle states:
+                Entities must depend on abstractions, not on concretions. It states that the high-level module must not
+                depend on
+                the low-level module, but they should depend on abstractions.
+                This principle allows for decoupling.
+
+            </p>
+
+            <h5>Overview of Design Patterns</h5>
+            <p>
+                A design pattern is a general repeatable solution to a commonly occurring problem in software design. A
+                design pattern isn't a finished design that can be transformed directly into code. It is a description
+                or template for how to solve a problem that can be used in many different situations.
+
+            </p>
+            <p>
+                Most patterns are described very formally so people can reproduce them in many contexts. Below are the
+                sections that are usually present in a pattern description:
+            <ul>
+                <li>Intent of the pattern briefly describes both the problem and the solution.</li>
+                <li>Motivation further explains the problem and the solution the pattern makes possible.</li>
+                <li>Structure of classes shows each part of the pattern and how they are related.</li>
+                <li>Code example in one of the popular programming languages makes it easier to grasp the idea behind
+                    the pattern.
+                </li>
+            </ul>
+
+            </p>
+            All patterns can be categorized by their intent, or purpose.The three main groups of patterns:
+            <p>
+            <h6>1.Creational patterns</h6>
+            <p>These patterns provide object creation mechanisms that increase flexibility and reuse of existing code.
+            <p>Examples :
+            <ul>
+                <li>Factory Method: It is a creational design pattern that provides an interface for creating objects in
+                    a superclass, but allows subclasses to alter the type of objects that will be created.
+                </li>
+                <li>Singleton : It is a creational design pattern that lets you ensure that a class has only one
+                    instance, while providing a global access point to this instance.
+                </li>
+            </ul>
+            </p>
+            </p>
+
+            <h6>2.Structural patterns </h6>
+            <p> These patterns explain how to assemble objects and classes into larger structures, while keeping these
+                structures flexible and efficient.
+            <p>Examples:
+            <ul>
+                <li>Facade: It is a structural design pattern that provides a simplified interface to a library, a
+                    framework, or any other complex set of classes.
+                </li>
+                <li>Decorator: It is a structural design pattern that lets you attach new behaviors to objects by
+                    placing these objects inside special wrapper objects that contain the behaviors.
+                </li>
+            </ul>
+            </p>
+            </p>
+
+            <h6>3.Behavioral patterns </h6>
+            <p>These patterns take care of effective communication and the assignment of responsibilities between
+                objects.
+            <p>Examples:
+            <ul>
+                <li>Chain of Responsibility: is a behavioral design pattern that lets you pass requests along a chain of
+                    handlers. Upon receiving a request, each handler decides either to process the request or to pass it
+                    to the next handler in the chain.
+                </li>
+                <li>Iterator: is a behavioral design pattern that lets you traverse elements of a collection without
+                    exposing its underlying representation (list, stack, tree, etc.).
+                </li>
+            </ul>
+            </p>
+            </p>
+            </p>
+            </p>
+        </div>
+        <div class="col">
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Fun Facts!</h5>
+                    <p class="card-text">
+                    <ul>
+                        <li>
+                            The most basic and low-level design patterns are often called "idioms".
+                        </li>
+                        <li>
+                            The most universal and high-level design patterns are "architectural patterns".
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Links</h5>
+                    <p><a href=" https://www.geeksforgeeks.org/python-oops-concepts/">Python OOP Concepts </a></p>
+                    <p>
+                        <a href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design#single-responsibility-principle">SOLID
+                            Principles</a></p>
+                    <p><a href="https://refactoring.guru/">Design Patterns </a></p>
+                </div>
+            </div>
+
+            <img src="{{ url_for('static', filename='images/OOP_ex.png') }}" class="d-block w-100 item mt-5"
+                 alt="...">
+        </div>
+
+    </div>
+
+{% endblock %}
