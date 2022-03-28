@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Demonstrating OOP Principles Using Calculator Class</h2>
+    <div class="row">
+        <div class="col-8">
+            <p>
+               In this article i have explained the 4 principles of object oriented programming : Inheritance , Polymorphism , Abstraction
+                and Encapsulation using examples from the calculator program.
+            </p>
+            <p>
+
+            <h5>Inheritance</h5>
+            Consider the example below
+            <p>
+            <pre>
+                class Summation(Calculator):
+                    """addition class"""
+
+                    def calculate_res(self):
+                        """returns addition results"""
+                        sum_values = 0.0
+                        for num in self.values_list:
+                            sum_values = Add.add(num, sum_values)
+                        return sum_values
+
+        </pre>
+            </p>
+            The Summation class is extending the abstract Calculator class.
+            The summation class inherits the methods "create" and "float_conversion" and also the list "num_list" from calculator
+            This way , these methods need not be written in summation class again and hence provides re-usability of code
+            </p>
+
+            <p>
+            <h5>Polymorphism</h5>
+            The below example illustrates polymorphism
+            <p> <pre>
+                        @staticmethod
+                        def add(num_list):
+                            """ This is the add method"""
+                            calculation = Summation.create(num_list)
+                            return calculation.calculate_res()
+        </pre>
+        </p>
+            In this example , the "calculate_res" method can be used by any object of the "calculator" type , and we can call it
+            on any class on the "Calculator" , that is "Summation" , "Difference" , "Product"  or "Divide" and we will get the appropriate result back.
+
+
+
+            </p>
+
+            <p>
+            <h5>Encapsulation</h5>
+            Consider the below example
+            <p>
+            <pre>
+                 @staticmethod
+                def multiply(num_list):
+                    """ This is the multiplication method"""
+                    calculation = Product.create(num_list)
+                    return calculation.calculate_res()
+    </pre>
+            </p>
+            Here , "calculation" variable holds/stores an instance of the class "Product". it encapsulates the data that
+            is the list "num_list" and the functionality to work on that data
+            that is the method used to multiply the numbers in the list "calculate_res" to get the result.
+
+            </p>
+
+             <p>
+            <h5>Abstraction</h5>
+            Consider the below example
+            <p>
+            <pre>
+                class CalculatorMain:
+                    @staticmethod
+                    def subtract(num_list):
+                        """ This is the subtract method"""
+                        calculation = Difference.create(num_list)
+                        return calculation.calculate_res()
+
+                 class Difference(Calculator):
+                 """subtraction class"""
+
+                         def calculate_res(self):
+                            """returns the subtraction results"""
+                            diff_values = 0.0
+                            for value in self.values_list:
+                                diff_values = Sub.sub(diff_values, value)
+                            return diff_values
+
+                    class Sub:
+                    """ This class is used for subtraction of 2 numbers"""
+
+                            # pylint: disable=redefined-outer-name
+                            @staticmethod
+                            def sub(num1, num2):
+                                """This method does the subtraction operation"""
+                                sub_res = num1 - num2
+                                return sub_res
+    </pre>
+            </p>
+            These 3 methods demonstrate the principle of "Abstraction".
+            first the method "subtract" of the "CalculatorMain" class is calling the method "calculate_res" of the "Difference" calculator class
+            next , the "calculate_res" method is calling the "sub" method of the "Sub" class inside the loop.
+            finally the "sub" method is doing the subtraction calculation.
+            All this underlying functionality is hidden when the "calculate_res" method is called, showing how abstraction reduces the complexity of the program.
+
+            </p>
+
+
+
+        </div>
+
+        <div class="col">
+            <p>Other examples for</p>
+            <h6>Inheritance</h6>
+            <img src="{{ url_for('static', filename='images/inherit.png') }}" class="d-block w-100 item"
+                 alt="...">
+            <br>
+            <h6>Polymorphism</h6>
+            <img src="{{ url_for('static', filename='images/polymorphism.png') }}" class="d-block w-100 item "
+                 alt="..." title="Example 1">
+
+            <br>
+            <h6>Encapsulation</h6>
+            <img src="{{ url_for('static', filename='images/encapsulation.png') }}" class="d-block w-100 item"
+                 alt="..." title="Example 2">
+
+
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h6 class="card-title">For Calculator class go to</h6>
+                    <p class="card-text"> calculator -> calculations-> __init__.py</p>
+                    <h6 class="card-title">For Calculator Main class go to</h6>
+                    <p class="card-text"> calculator-> __init__.py</p>
+                    <h6 class="card-title">For Add, Sub, Mul and Div classes go to</h6>
+                    <p class="card-text"> calculator -> operations-> __init__.py</p>
+                </div>
+            </div>
+
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Reference Links</h5>
+                    <p>
+                        <a href="https://www.geeksforgeeks.org/inheritance-in-python/">Inheritance
+                            </a> <br>
+                      <a href="https://www.geeksforgeeks.org/polymorphism-in-python/">Polymorphism
+                            </a><br>
+                        <a href="https://www.geeksforgeeks.org/encapsulation-in-python/">Encapsulation
+                            </a><br>
+                        <a href="https://www.geeksforgeeks.org/abstract-classes-in-python/">Abstraction
+                            </a>
+
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+{% endblock %}
