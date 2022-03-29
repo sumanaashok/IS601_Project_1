@@ -21,3 +21,11 @@ def test_calculator_operations_multiply():
 def test_calculator_operations_divide():
     """Testing the Calculator"""
     assert Div.div(1, 1) == 1
+
+
+def test_calculator_operations_divide_by_zero():
+    """Testing the Divide By Zero operation"""
+    try:
+        Div.div(25, 0)
+    except ZeroDivisionError:
+        assert True

@@ -28,18 +28,6 @@
                 <li>Everyone can see what's happening</li>
                 <li>Automate Deployment</li>
             </ul>
-            <h6>Benefits of CI</h6>
-            <ul>
-                <li>The greatest and most wide ranging benefit of Continuous Integration is reduced risk.</li>
-                <li>Continuous Integrations doesn't get rid of bugs but make them dramatically easier to find and
-                    remove.
-                </li>
-                <li>If you have continuous integration, it removes one of the biggest barriers to frequent deployment.
-                    Frequent deployment is valuable because it allows your users to get new features more rapidly, to
-                    give more rapid feedback on those features, and generally become more collaborative in the
-                    development cycle.
-                </li>
-            </ul>
 
             <div>
                 <h5>Continuous Delivery</h5>
@@ -63,12 +51,6 @@
                     <sup><a href="https://www.martinfowler.com/bliki/ContinuousDelivery.html"
                             target="_blank">[2]</a></sup>
                 </ul>
-                <h6>Benefits of CD</h6>
-                <ul>
-                    <li>Reduced Deployment Risk</li>
-                    <li>Believable Progress</li>
-                    <li>User Feedback</li>
-                </ul>
                 <div>
                     <h5>Github Actions:</h5>
                     <ul>
@@ -89,28 +71,33 @@
                 <div>
                     <h6>Development Workflow</h6>
                     <p>
-                        Whenever a PR (Pull Request) is opened to add a new change, the development worflow is triggered.
+                        Whenever a PR (Pull Request) is opened to add a new change, the development worflow is
+                        triggered.
                         During the development workflow, the following events happen:
                     </p>
                     <ul>
                         <li>Runs all checks and tests.</li>
                         <li>If all checks pass, the image is then deployed to the dev app on Heroku.</li>
                         <li>Any new commits that go into the PR will trigger the workflow again.</li>
-                        <li>When the development workflow is run, the production app remains untouched and free of errors.</li>
-                        <li>Code changes can be reviewed on the Pull Request, and the corresponding feature changes can be viewed on the dev heroku app's url.</li>
+                        <li>When the development workflow is run, the production app remains untouched and free of
+                            errors.
+                        </li>
+                        <li>Code changes can be reviewed on the Pull Request, and the corresponding feature changes can
+                            be viewed on the dev heroku app's url.
+                        </li>
                         <li>Using the dev app's url anybody can review the code.</li>
                     </ul>
                 </div>
                 <div>
                     <h6>Production Workflow</h6>
                     <p>
-                       When the Pull Request is merged into master, the production workflow is triggered.
+                        When the Pull Request is merged into master, the production workflow is triggered.
                         In the production workflow, the following events happen:
                     </p>
                     <ul>
                         <li>All the tests and checks are run again.</li>
                         <li>The docker image is built and uploaded to the docker hub.</li>
-                <pre>
+                        <pre>
                     - name: Login to DockerHub
                         uses: docker/login-action@v1
                         with:
@@ -131,8 +118,10 @@
                           tags: $&#123;&#123; steps.meta.outputs.tags &#125;&#125;
                           labels: $&#123;&#123; steps.meta.outputs.labels &#125;&#125;
                 </pre>
-                        <li>The new docker image is then deployed to the production Heroku app. Within the production yml file, we can observe the following:</li>
-                <pre>
+                        <li>The new docker image is then deployed to the production Heroku app. Within the production
+                            yml file, we can observe the following:
+                        </li>
+                        <pre>
                       heroku_api_key: $&#123;&#123; secrets.HEROKU_API_KEY &#125;&#125;
                       heroku_app_name: "sumana-prod" #Must be unique in Heroku
                       heroku_email: "sb232@njit.edu"
@@ -143,13 +132,64 @@
             </div>
         </div>
 
-     <div class="col">
+        <div class="col">
 
-            <div class="card mt-5" style="width: 18rem;">
+            <img src="{{ url_for('static', filename='images/cicd_page.png') }}" class="d-block w-100 item mt-5"
+                 alt="...">
+
+            <div class="card mt-5" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Benefits of CI</h5>
+                    <p>
+                    <ul>
+                        <li>The greatest and most wide ranging benefit of Continuous Integration is reduced risk.</li>
+                        <li>Continuous Integrations doesn't get rid of bugs but make them dramatically easier to find
+                            and
+                            remove.
+                        </li>
+                        <li>If you have continuous integration, it removes one of the biggest barriers to frequent
+                            deployment.
+                            Frequent deployment is valuable because it allows your users to get new features more
+                            rapidly, to
+                            give more rapid feedback on those features, and generally become more collaborative in the
+                            development cycle.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card mt-5" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Benefits of CD</h5>
+                    <p>
+                    <ul>
+                        <li>Reduced Deployment Risk</li>
+                        <li>Believable Progress</li>
+                        <li>User Feedback</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-5" style="width: 20rem;">
                 <div class="card-body">
                     <h5 class="card-title">Citations</h5>
-                    <p><a href="https://www.martinfowler.com/articles/continuousIntegration.html">[1] Continuous Integration</a>
+                    <p><a href="https://www.martinfowler.com/articles/continuousIntegration.html">[1] Continuous
+                        Integration</a>
                         <a href="https://www.martinfowler.com/bliki/ContinuousDelivery.html">[2] Continuous Delivery</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-5" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Author Details</h5>
+                    <p>
+                        Name: Sumana Bangalore Ashok<br>
+                    <p><a href="https://github.com/sumanaashok/" target="_blank">My Github</a></p>
+                    <p><a href="https://www.linkedin.com/in/sumana-ashok/" target="_blank">My LinkedIn</a></p>
                     </p>
                 </div>
             </div>

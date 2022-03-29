@@ -27,17 +27,23 @@
             <h5>Docker Hub Repositories</h5>
             <ul>
 
-            <li>Docker Hub repositories allow you share container images with your team, customers, or the Docker community
-                at large. </li>
-                <li> <code>docker push</code> command is used to push the docker images to docker hub.One docker repository can hold multiple
-                    images.</li>
+                <li>Docker Hub repositories allow you share container images with your team, customers, or the Docker
+                    community
+                    at large.
+                </li>
+                <li><code>docker push</code> command is used to push the docker images to docker hub.One docker
+                    repository can hold multiple
+                    images.
+                </li>
 
-            <li>The local docker image must be named using the docker hub username and repo name to push an image to docker
-                hub.</li>
-            <li>We can use &lt;:tag&gt; to add multiple images to the repository like:
-                <code>docker tag existing-image&gt; &lt;hub-user&gt;/&lt;repo-name&gt;[:&lt;tag&gt;]"</code></li>
-            <li>Once its tagged we can push the image by using the command
-                <code>docker push &lt;hub-user&gt;/&lt;repo-name&gt;:&lt;tag&gt;"</code></li>
+                <li>The local docker image must be named using the docker hub username and repo name to push an image to
+                    docker
+                    hub.
+                </li>
+                <li>We can use &lt;:tag&gt; to add multiple images to the repository like:
+                    <code>docker tag existing-image&gt; &lt;hub-user&gt;/&lt;repo-name&gt;[:&lt;tag&gt;]"</code></li>
+                <li>Once its tagged we can push the image by using the command
+                    <code>docker push &lt;hub-user&gt;/&lt;repo-name&gt;:&lt;tag&gt;"</code></li>
 
             </ul>
 
@@ -47,23 +53,34 @@
             <h5>Docker Commands</h5>
             <ul>
                 <li><code>docker compose up --build</code>
-            This command builds images in the docker-compose.yml file and starts the containers.
-            The build command gets the images ready to create containers. If images are already built, it will fork the
-            container directly.
-            This command does the work of both docker compose build and docker compose run.</li>
+                    This command builds images in the docker-compose.yml file and starts the containers.
+                    The build command gets the images ready to create containers. If images are already built, it will
+                    fork the
+                    container directly.
+                    This command does the work of both docker compose build and docker compose run.
+                </li>
 
                 <li><code>docker ps </code> This command is used to list the running containers</li>
                 <li><code>docker ps -a </code> This command shows all the running and exited containers</li>
                 <li><code>docker stop </code> This command stops the running container</li>
-                <li><code>docker kill</code> when a container is taking too long to stop the kill command can be used to terminate it
-                    immediately.</li>
-                <li><code>docker run -it -d &lt;image name&gt;</code> is used to start a container from a docker image example : <code>docker
-                    run -d -p 80:80 sb232/first-website:latest </code> runs the latest version of first-website on port 80:80. -d option helps to keep the container running when you exit the terminal session.</li>
-                <li> <code>docker build . -t docker_flask-master</code> builds the docker image for docker_flask-master</li>
+                <li><code>docker kill</code> when a container is taking too long to stop the kill command can be used to
+                    terminate it
+                    immediately.
+                </li>
+                <li><code>docker run -it -d &lt;image name&gt;</code> is used to start a container from a docker image
+                    example : <code>docker
+                        run -d -p 80:80 sb232/first-website:latest </code> runs the latest version of first-website on
+                    port 80:80. -d option helps to keep the container running when you exit the terminal session.
+                </li>
+                <li><code>docker build . -t docker_flask-master</code> builds the docker image for docker_flask-master
+                </li>
                 <li><code>docker pull &lt;image name&gt;</code> is used to pull images from docker hub repository.</li>
                 <li><code>docker login</code> is used to login to docker hub</li>
                 <li><code>docker push [OPTIONS] NAME[:TAG]</code> is used to push images to docker hub.</li>
-                <li><code>docker exec &lt;options&gt; &lt;container&gt; &lt;command&gt;</code> this command runs a new command in a running container. Example <code>docker exec -it 3d917a898078 bash</code> - this launches a terminal within the running container.</li>
+                <li><code>docker exec &lt;options&gt; &lt;container&gt; &lt;command&gt;</code> this command runs a new
+                    command in a running container. Example <code>docker exec -it 3d917a898078 bash</code> - this
+                    launches a terminal within the running container.
+                </li>
                 <li><code>docker logs</code> - batch-retrieves logs present at the time of execution.</li>
 
             </ul>
@@ -73,25 +90,57 @@
             <p>
             <h5>Steps to start a project and accessing container from terminal.</h5>
             <ul>
-                <li>In the terminal , navigate to the folder where the project is located and run the command: <code>docker ps</code> to
-                    check which containers are already running.</li>
-                <li>Then run <code>docker build . -t project_name</code> This will build the image for the project ready to create
-                containers.</li>
-                <li>Next run , <code>docker run -dp 3000:3000</code> project_name to start the container at port 3000</li>
+                <li>In the terminal , navigate to the folder where the project is located and run the command: <code>docker
+                    ps</code> to
+                    check which containers are already running.
+                </li>
+                <li>Then run <code>docker build . -t project_name</code> This will build the image for the project ready
+                    to create
+                    containers.
+                </li>
+                <li>Next run , <code>docker run -dp 3000:3000</code> project_name to start the container at port 3000
+                </li>
                 <li>To check if the project is running go to localhost:3000.</li>
-            <li>To access the container when its running , do a docker ps to get the id of the docker container and then
-            run :
-                <code>docker exec -it &lt;container&gt; bash</code> This will open a terminal inside the container.</li>
+                <li>To access the container when its running , do a docker ps to get the id of the docker container and
+                    then
+                    run :
+                    <code>docker exec -it &lt;container&gt; bash</code> This will open a terminal inside the container.
+                </li>
             </ul>
             </p>
         </div>
 
         <div class="col">
 
+            <img src="{{ url_for('static', filename='images/docker_page.png') }}" class="d-block w-75 item"
+                 alt="...">
+
             <div class="card mt-5" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Link to the project repository on docker hub</h5>
                     <p><a href="https://hub.docker.com/repository/docker/sb232/docker_flask">Docker Hub</a></p>
+                    Command to pull my docker container image<br>
+                    $docker pull sb232/docker_flask
+                </div>
+            </div>
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Reference Links</h5>
+                    <p><a href="https://docs.docker.com/get-started/">Getting Started With Docker</a></p>
+                    <p><a href="https://docs.docker.com/desktop/mac/install/">Installing Docker</a></p>
+
+                </div>
+            </div>
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Author Details</h5>
+                    <p>
+                        Name: Sumana Bangalore Ashok<br>
+                    <p><a href="https://github.com/sumanaashok/" target="_blank">My Github</a></p>
+                    <p><a href="https://www.linkedin.com/in/sumana-ashok/" target="_blank">My LinkedIn</a></p>
+                    </p>
                 </div>
             </div>
 
