@@ -4,8 +4,8 @@
     <div class="row">
         <div class="col-8">
             <p>
-            <img src="{{ url_for('static', filename='images/oop_page.png') }}" class="d-block w-100 item mt-5"
-                 alt="...">
+                <img src="{{ url_for('static', filename='images/oop_page.png') }}" class="d-block w-100 item mt-5"
+                     alt="...">
             <p>
                 Object-oriented programming (OOP) is a computer programming model that organizes software design around
                 data, or objects, rather than functions and logic. An object can be defined as a data field that has
@@ -19,11 +19,18 @@
 
             <p>A class is a collection of objects. A class contains the blueprints or the prototype from which the
                 objects are being created. It is a logical entity that contains some attributes and methods.
+                <br>
+                Class declaration example :-
+                class Calculator:<br>
+                When extending a class :-
+                class Summation(Calculator):
+
             </p>
 
             <h5>Object</h5>
             <p>
-                The object is an entity that has a state and behavior associated with it. It may be any real-world
+                Object is an instance of a class. The object is an entity that has a state and behavior associated with
+                it. It may be any real-world
                 object like a mouse, keyboard, chair, table, pen, etc. Integers, strings, floating-point numbers,
                 even
                 arrays, and dictionaries, are all objects. More specifically, any single integer or any single
@@ -156,7 +163,7 @@
                 Polymorphism lets us define methods in the child class that have the same name as the methods in the
                 parent class. In inheritance, the child class inherits the methods from the parent class. However, it is
                 possible to modify a method in a child class that it has inherited from the parent class. This is
-                particularly useful in cases where the method inherited from the parent class doesn’t quite fit the
+                particularly useful in cases where the method inherited from the parent class doesnt quite fit the
                 child class. In such cases, we re-implement the method in the child class. This process of
                 re-implementing a method in the child class is known as Method Overriding.
             </p>
@@ -218,7 +225,7 @@
             <h6>Interface Segregation Principle</h6>
             <p>
                 Interface segregation principle states:
-                A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be
+                A client should never be forced to implement an interface that it doesnt use, or clients shouldn’t be
                 forced to
                 depend on methods they do not use.
             </p>
@@ -302,10 +309,156 @@
             </p>
         </div>
         <div class="col">
-
-            <div class="card mt-5" style="width: 18rem;">
+            <img src="{{ url_for('static', filename='images/OOP_ex.png') }}" class="d-block w-75 item mt-5"
+                 alt="...">
+            <div class="card mt-3" style="width: 25rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Fun Facts!</h5>
+                    <h5 class="card-title">The classes in calculator Program</h5>
+                    <p class="card-text">
+                    <ul>
+                        <li>
+                            Calculator(Abstract class)
+                        </li>
+                        <li>
+                            CalculatorMain
+                        </li>
+                        <li>
+                            Summation , Difference , Multiply , Divide <br>
+                            These extend the Calculator class
+                        </li>
+                        <li>
+                            Add, Sub , Mul , Div <br>
+                            These perform the respective operations.
+                        </li>
+                        <li>
+                            Calculations : Used for History operations
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Object Example:</h5>
+                    <p class="card-text">
+                    <pre>calculation = Product.create(num_list)</pre>
+                    The above code creates an object called calculation of the "Product" class. it uses the create
+                    function of its super class "Calculator" to do so.
+
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card mt-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Instantiation Example:</h5>
+                    <p class="card-text">
+                    <pre>calculation = Summation.create(num_list)</pre>
+                    The above code creates an object called calculation of the "Summation" class. it uses the create
+                    function of its super class "Calculator" to do so.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Namespace:</h5>
+                    <p class="card-text">
+                    <pre>Example: from calculator.calculations import Summation, Difference, Product, Divide </pre>
+                    "from" defines the namespace for the class.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Constructor for the Calculation class</h5>
+                    <p class="card-text">
+                    <pre>def __init__(self, num_list):
+"""constructor for calculation class"""
+self.num_list = num_list
+self.values_list = Calculator.float_conversion(num_list)</pre>
+                    This constructor calls the float_conversion method to convert values in the list to float
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Fixture</h5>
+                    <p class="card-text">
+                    <pre>@pytest.fixture
+def clear_history_fixture():
+# pylint: disable=redefined-outer-name
+History.clear_history()</pre>
+                    This test will run everytime you pass it to a test
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-5" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Type casting</h5>
+                    <p class="card-text">
+                    <pre>def float_conversion(num_list):
+list_float = []
+for num in num_list:
+    list_float.append(float(num))
+return list_float</pre>
+                    The above function converts the numbers from the list to float.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Static Method Example:</h5>
+                    <p class="card-text">
+                    <pre>@staticmethod
+def add(num1, num2):
+    """This method does the addition operation"""
+    add_res = num1 + num2
+    return add_res</pre>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mt-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Static Property:</h5>
+                    <p class="card-text">
+                    <pre>num_list = [] <br>
+history = []</pre>
+                    The lists num_list(Calculator)and history(Calculations) are declared inside the class but outside
+                    any method.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <p>Examples for</p>
+            <h6>1.Inheritance</h6>
+            <p>The Difference class extends the Calculator</p>
+            <img src="{{ url_for('static', filename='images/inherit.png') }}" class="d-block w-100 item"
+                 alt="...">
+            <br>
+            <h6>2.Polymorphism</h6>
+            <p>The method calculate_res is being used by multiple classes</p>
+            <img src="{{ url_for('static', filename='images/polymorphism.png') }}" class="d-block w-100 item "
+                 alt="...">
+
+            <br>
+            <h6>3.Encapsulation</h6>
+            <p>The "Calculation" variable encapsulates the data that is the list "num_list" and the functionality to
+                work on that data</p>
+            <img src="{{ url_for('static', filename='images/encapsulation.png') }}" class="d-block w-100 item"
+                 alt="...">
+
+
+            <div class="card mt-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Design Patterns Fun Facts!</h5>
                     <p class="card-text">
                     <ul>
                         <li>
@@ -319,7 +472,7 @@
                 </div>
             </div>
 
-            <div class="card mt-5" style="width: 18rem;">
+            <div class="card mt-3" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Links</h5>
                     <p><a href=" https://www.geeksforgeeks.org/python-oops-concepts/">Python OOP Concepts </a></p>
@@ -330,8 +483,7 @@
                 </div>
             </div>
 
-            <img src="{{ url_for('static', filename='images/OOP_ex.png') }}" class="d-block w-100 item mt-5"
-                 alt="...">
+
         </div>
 
     </div>

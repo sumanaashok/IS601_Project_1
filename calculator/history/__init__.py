@@ -1,5 +1,5 @@
 """Calculation history Class"""
-from calculator.calculations import Summation, Difference, Product, Divide
+#from calculator.calculations import Summation, Difference, Product, Divide
 
 
 class Calculations:

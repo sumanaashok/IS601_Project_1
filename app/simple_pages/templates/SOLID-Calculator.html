@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Demonstrating SOLID Principles Using Calculator Program</h2>
+    <div class="row">
+        <div class="col-8">
+            <p>
+               In this article i have explained the SOLID principles using examples from the calculator program.
+            </p>
+            <p>
+
+            <h5>S : Single Responsibility Principle</h5>
+            The principle states that ,A class should have one and only one reason to change, meaning that a class should have only one job.
+Consider the example below
+            <p>
+            <pre>
+                class Summation(Calculator):
+                """addition class"""
+                        def calculate_res(self):
+                            """returns addition results"""
+                            sum_values = 0.0
+                            for num in self.values_list:
+                                sum_values = Add.add(num, sum_values)
+                            return sum_values
+
+        </pre>
+            </p>
+            Here the Summation class is only responsible for "addition" of the numbers in the list "values_list".
+            To use the Summation class, we will need to instantiate the class and pass in a list of numbers.
+            </p>
+
+            <p>
+            <h5>O : Open-Closed Principle</h5>
+
+            <p> <pre>
+                       class Calculator:
+                        """ The Base abstract class for calculation"""
+
+                            num_list = []
+
+                            # pylint: disable=too-few-public-methods
+                            def __init__(self, num_list):
+                                """constructor for calculation class"""
+                                self.num_list = num_list
+                                self.values_list = Calculator.float_conversion(num_list)
+
+                            @classmethod
+                            def create(cls, num_list):
+                                """factory function"""
+                                return cls(num_list)
+
+                            @staticmethod
+                            def float_conversion(num_list):
+                                list_float = []
+                                for num in num_list:
+                                    list_float.append(float(num))
+                                return list_float
+
+
+                        class Difference(Calculator):
+                        """subtraction class"""
+
+                                def calculate_res(self):
+                                    """returns the subtraction results"""
+                                    diff_values = 0.0
+                                    for value in self.values_list:
+                                        diff_values = Sub.sub(diff_values, value)
+                                    return diff_values
+        </pre>
+        </p>
+            The calculator class is being extended by the "Difference" class , the difference class inherits all its
+            methods and attributes but it does not modify the calculator class. thus satisfying the open-close
+            principle.
+            </p>
+
+            <p>
+            <h5>L : Liskov Substitution Principle</h5>
+           The Liskov Substitution Principle states that subclasses should be substitutable for their base classes.
+            This is the expected behavior because the child class extends the behavior but never narrows it down.
+            Lets look at the example below:
+            <p>
+            <pre>
+                 class Calculator:
+                        """ The Base abstract class for calculation"""
+
+                            num_list = []
+
+                            # pylint: disable=too-few-public-methods
+                            def __init__(self, num_list):
+                                """constructor for calculation class"""
+                                self.num_list = num_list
+                                self.values_list = Calculator.float_conversion(num_list)
+
+                            @classmethod
+                            def create(cls, num_list):
+                                """factory function"""
+                                return cls(num_list)
+
+                            @staticmethod
+                            def float_conversion(num_list):
+                                list_float = []
+                                for num in num_list:
+                                    list_float.append(float(num))
+                                return list_float
+
+
+                        class Difference(Calculator):
+                        """subtraction class"""
+
+                                def calculate_res(self):
+                                    """returns the subtraction results"""
+                                    diff_values = 0.0
+                                    for value in self.values_list:
+                                        diff_values = Sub.sub(diff_values, value)
+                                    return diff_values
+    </pre>
+            </p>
+
+            The Calculator class is being extended by 4 other classes. that is Summation, Difference, Product, Divide.
+            All the child classes can use all the functionality of the parent - calculator.
+            But there is no dependency where in any change to the any of the child classes will change the parent "Calculator", hence this satisfies the
+            Liskov Substitution Principle
+            </p>
+
+             <p>
+            <h5>I : Interface Segregation Principle</h5>
+            The principle states that A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.
+            Consider the below example
+            <p>
+            <pre>
+
+                 class Difference(Calculator):
+                 """subtraction class"""
+
+                         def calculate_res(self):
+                            """returns the subtraction results"""
+                            diff_values = 0.0
+                            for value in self.values_list:
+                                diff_values = Sub.sub(diff_values, value)
+                            return diff_values
+
+                    class Sub:
+                    """ This class is used for subtraction of 2 numbers"""
+
+                            # pylint: disable=redefined-outer-name
+                            @staticmethod
+                            def sub(num1, num2):
+                                """This method does the subtraction operation"""
+                                sub_res = num1 - num2
+                                return sub_res
+    </pre>
+            </p> <p>
+            From this example we can see that , the class "Sub" only has one function to do the subtraction operation.
+            which is perfect because that is what our class "Difference" is expecting from the "Sub" classs. there are no extra functions
+            in the "Sub" class which is not of interest to "Difference" class.
+            Similarly for all other operations- addition,multiplication and division, The classes Summation, Product and Divide only get the methods that are needed for calculation.
+            Thus satisfying the Interface Segregation Principle
+            </p>
+        </p>
+
+
+            <p>
+            <h5>D: Dependency Inversion Principle</h5>
+                    The principle states that , Entities must depend on abstractions, not on concretions.
+                    Consider the code sample below:
+            <p> <pre>
+                       class Calculator:
+                        """ The Base abstract class for calculation"""
+
+                            num_list = []
+
+                            # pylint: disable=too-few-public-methods
+                            def __init__(self, num_list):
+                                """constructor for calculation class"""
+                                self.num_list = num_list
+                                self.values_list = Calculator.float_conversion(num_list)
+
+                            @classmethod
+                            def create(cls, num_list):
+                                """factory function"""
+                                return cls(num_list)
+
+                            @staticmethod
+                            def float_conversion(num_list):
+                                list_float = []
+                                for num in num_list:
+                                    list_float.append(float(num))
+                                return list_float
+
+
+                        class Difference(Calculator):
+                        """subtraction class"""
+
+                                def calculate_res(self):
+                                    """returns the subtraction results"""
+                                    diff_values = 0.0
+                                    for value in self.values_list:
+                                        diff_values = Sub.sub(diff_values, value)
+                                    return diff_values
+        </pre>
+        </p>
+            <p>The Class "Difference" only depends on the Abstract class "Calculator".
+                The same goes with other classes for other operations - "Summation" , "Product" and "Divide".
+                the classes do not depend on any low-level-modules , hence there are decoupled.
+                This satisfies the "Dependency Inversion Principle".
+            </p>
+
+        </p>
+
+
+
+        </div>
+
+        <div class="col">
+               <img src="{{ url_for('static', filename='images/solid_image.png') }}" class="d-block w-100 item" style="height: 400px;"
+                 alt="..."> <br>
+            <p>Other examples for</p>
+            <h6>Single Responsibility Principle</h6>
+            <img src="{{ url_for('static', filename='images/single.png') }}" class="d-block w-100 item" style="height: 300px;"
+                 alt="...">
+            <br>
+            <h6>Interface Segregation Principle</h6>
+            <img src="{{ url_for('static', filename='images/interface.png') }}" class="d-block w-100 item " style="height: 400px;"
+                 alt="...">
+           <br>
+            <h6>Liskov Substitution Principle</h6>
+            <img src="{{ url_for('static', filename='images/Liskov.png') }}" class="d-block w-100 item " style="height: 500px;"
+                 alt="...">
+            <br>
+            <p>
+            <h6>Design Pattern Example:</h6><br>
+                The calculator program makes use of the "Factory method" pattern.<br>
+                The code snippet below shows the use of factory pattern.
+            <br>
+            The objects are created in the super class "Calculator". <br>
+            The type of object is decided by the sub-classes like "Summation".<br>
+                <img src="{{ url_for('static', filename='images/factory.png') }}" class="d-block w-100 item mt-3" style="height: 400px;"
+                 alt="...">
+            </p>
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h6 class="card-title">For Calculator class go to</h6>
+                    <p class="card-text"> calculator -> calculations-> __init__.py</p>
+                    <h6 class="card-title">For Calculator Main class go to</h6>
+                    <p class="card-text"> calculator-> __init__.py</p>
+                    <h6 class="card-title">For Add, Sub, Mul and Div classes go to</h6>
+                    <p class="card-text"> calculator -> operations-> __init__.py</p>
+                </div>
+            </div>
+
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Reference Link</h5>
+                    <p>
+                        <a href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design">SOLID Principles
+                            </a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card mt-5" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Author Details</h5>
+                    <p>
+                        <p><a href="https://github.com/sumanaashok/" target="_blank">My Github</a></p>
+                    <p><a href="https://www.linkedin.com/in/sumana-ashok/" target="_blank">My LinkedIn</a></p>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+{% endblock %}
