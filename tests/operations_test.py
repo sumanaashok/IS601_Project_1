@@ -3,27 +3,27 @@
 from calculator.operations import Add, Sub, Mul, Div
 
 
-def test_calculator_operations_add():
+def testing_operations_add():
     """Testing the Calculator"""
-    assert Add.add(1, 1) == 2
+    assert Add.add(2, 3) == 5
 
 
-def test_calculator_operations_subtract():
+def testing_operations_subtract():
     """Testing the Calculator"""
-    assert Sub.sub(1, 1) == 0
+    assert Sub.sub(3, 2) == 1
 
 
-def test_calculator_operations_multiply():
+def testing_operations_multiply():
     """Testing the Calculator"""
-    assert Mul.mul(1, 1) == 1
+    assert Mul.mul(3, 2) == 6
 
 
-def test_calculator_operations_divide():
+def testing_operations_divide():
     """Testing the Calculator"""
     assert Div.div(1, 1) == 1
 
 
-def test_calculator_operations_divide_by_zero():
+def testing_operations_divide_by_zero():
     """Testing the Divide By Zero operation"""
     try:
         Div.div(25, 0)

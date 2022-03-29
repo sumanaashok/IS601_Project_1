@@ -36,7 +36,7 @@ class Div:  # pylint: disable=too-few-public-methods
 
     @staticmethod
     def div(num1, num2):
-        """This method does the multiplication operation"""
+        """This method does the division operation"""
         try:
             div_res = num1 / num2
             return div_res

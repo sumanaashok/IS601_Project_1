@@ -5,7 +5,7 @@ from calculator import CalculatorMain
 
 def num_list():
     """Arranging for AAA Testing"""
-    return 1.0, 2
+    return 2.0, 3
 
 
 def testing_add_method():
@@ -15,19 +15,19 @@ def testing_add_method():
     result = CalculatorMain.add(num_list())
 
     # Assert for AAA testing
-    assert result == 3
+    assert result == 5
 
 
-def test_calculator_subtract_method():
+def testing_subtract_method():
     """Testing the Calculator Subtract"""
-    assert CalculatorMain.subtract(num_list()) == -3
+    assert CalculatorMain.subtract(num_list()) == -5
 
 
-def test_calculator_multiply_method():
+def testing_multiply_method():
     """Testing the Calculator multiply"""
-    assert CalculatorMain.multiply(num_list()) == 2
+    assert CalculatorMain.multiply(num_list()) == 6
 
 
-def test_calculator_divide_method():
+def testing_divide_method():
     """Testing the Calculator divide"""
-    assert CalculatorMain.divide(num_list()) == 0.5
+    assert CalculatorMain.divide(num_list()) == 0.16666666666666666

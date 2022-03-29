@@ -8,7 +8,6 @@ class CalculatorMain:
     @staticmethod
     def add(num_list):
         """ This is the add method"""
-        # Call the static method add to return the sum and set it to the calculator result property
         calculation = Summation.create(num_list)
         return calculation.calculate_res()
 
