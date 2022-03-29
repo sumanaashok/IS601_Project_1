@@ -1,5 +1,5 @@
 """Calculation history Class"""
-#from calculator.calculations import Summation, Difference, Product, Divide
+from calculator.calculations import Summation, Difference, Product, Divide
 
 
 class Calculations:
@@ -44,27 +44,27 @@ class Calculations:
         """ get a generic calculation from history"""
         return Calculations.history.append(calculation)
 
-    # @staticmethod
-    # def add_addition_calculation(values):
-    #     """create an addition and add object to history using factory method create"""
-    #     Calculations.add_calculation(Summation.create(values))
-    #     # Get the result of the calculation
-    #     return True
-    #
-    # @staticmethod
-    # def add_subtraction_calculation(values):
-    #     """create a subtraction object to history using factory method create"""
-    #     Calculations.add_calculation(Difference.create(values))
-    #     return True
-    #
-    # @staticmethod
-    # def add_multiplication_calculation(values):
-    #     """Add a multiplication object to history using factory method create"""
-    #     Calculations.add_calculation(Product.create(values))
-    #     return True
-    #
-    # @staticmethod
-    # def add_division_calculation(values):
-    #     """Add a division object to history using factory method create"""
-    #     Calculations.add_calculation(Divide.create(values))
-    #     return True
+    @staticmethod
+    def add_addition_calculation(values):
+        """create an addition and add object to history using factory method create"""
+        Calculations.add_calculation(Summation.create(values))
+        # Get the result of the calculation
+        return True
+
+    @staticmethod
+    def add_subtraction_calculation(values):
+        """create a subtraction object to history using factory method create"""
+        Calculations.add_calculation(Difference.create(values))
+        return True
+
+    @staticmethod
+    def add_multiplication_calculation(values):
+        """Add a multiplication object to history using factory method create"""
+        Calculations.add_calculation(Product.create(values))
+        return True
+
+    @staticmethod
+    def add_division_calculation(values):
+        """Add a multiplication object to history using factory method create"""
+        Calculations.add_calculation(Divide.create(values))
+        return True

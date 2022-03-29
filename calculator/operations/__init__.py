@@ -37,5 +37,8 @@ class Div:  # pylint: disable=too-few-public-methods
     @staticmethod
     def div(num1, num2):
         """This method does the multiplication operation"""
-        div_res = num1 / num2
-        return div_res
+        try:
+            div_res = num1 / num2
+            return div_res
+        except ZeroDivisionError:
+            print("You can't divide by zero!")
