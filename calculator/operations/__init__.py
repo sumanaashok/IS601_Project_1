@@ -1,10 +1,9 @@
 """ The 4 basic Operation Classes"""
 
 
-class Add:
+class Add:  # pylint: disable=too-few-public-methods
     """ This class is used for addition of 2 numbers"""
 
-    # pylint: disable=redefined-outer-name
     @staticmethod
     def add(num1, num2):
         """This method does the addition operation"""
@@ -12,10 +11,9 @@ class Add:
         return add_res
 
 
-class Sub:
+class Sub:  # pylint: disable=too-few-public-methods
     """ This class is used for subtraction of 2 numbers"""
 
-    # pylint: disable=redefined-outer-name
     @staticmethod
     def sub(num1, num2):
         """This method does the subtraction operation"""
@@ -23,10 +21,9 @@ class Sub:
         return sub_res
 
 
-class Mul:
+class Mul:  # pylint: disable=too-few-public-methods
     """ This class is used for multiplication of 2 numbers"""
 
-    # pylint: disable=redefined-outer-name
     @staticmethod
     def mul(num1, num2):
         """This method does the multiplication operation"""
@@ -34,10 +31,9 @@ class Mul:
         return mul_res
 
 
-class Div:
+class Div:  # pylint: disable=too-few-public-methods
     """ This class is used for division of 2 numbers"""
 
-    # pylint: disable=redefined-outer-name
     @staticmethod
     def div(num1, num2):
         """This method does the multiplication operation"""

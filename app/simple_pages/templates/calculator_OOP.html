@@ -4,7 +4,8 @@
     <div class="row">
         <div class="col-8">
             <p>
-               In this article i have explained the 4 principles of object oriented programming : Inheritance , Polymorphism , Abstraction
+                In this article i have explained the 4 principles of object oriented programming : Inheritance ,
+                Polymorphism , Abstraction
                 and Encapsulation using examples from the calculator program.
             </p>
             <p>
@@ -26,24 +27,28 @@
         </pre>
             </p>
             The Summation class is extending the abstract Calculator class.
-            The summation class inherits the methods "create" and "float_conversion" and also the list "num_list" from calculator
-            This way , these methods need not be written in summation class again and hence provides re-usability of code
+            The summation class inherits the methods "create" and "float_conversion" and also the list "num_list" from
+            calculator
+            This way , these methods need not be written in summation class again and hence provides re-usability of
+            code
             </p>
 
             <p>
             <h5>Polymorphism</h5>
             The below example illustrates polymorphism
-            <p> <pre>
+            <p>
+            <pre>
                         @staticmethod
                         def add(num_list):
                             """ This is the add method"""
                             calculation = Summation.create(num_list)
                             return calculation.calculate_res()
         </pre>
-        </p>
-            In this example , the "calculate_res" method can be used by any object of the "calculator" type , and we can call it
-            on any class on the "Calculator" , that is "Summation" , "Difference" , "Product"  or "Divide" and we will get the appropriate result back.
-
+            </p>
+            In this example , the "calculate_res" method can be used by any object of the "calculator" type , and we can
+            call it
+            on any class on the "Calculator" , that is "Summation" , "Difference" , "Product" or "Divide" and we will
+            get the appropriate result back.
 
 
             </p>
@@ -66,7 +71,7 @@
 
             </p>
 
-             <p>
+            <p>
             <h5>Abstraction</h5>
             Consider the below example
             <p>
@@ -100,13 +105,14 @@
     </pre>
             </p>
             These 3 methods demonstrate the principle of "Abstraction".
-            first the method "subtract" of the "CalculatorMain" class is calling the method "calculate_res" of the "Difference" calculator class
+            first the method "subtract" of the "CalculatorMain" class is calling the method "calculate_res" of the
+            "Difference" calculator class
             next , the "calculate_res" method is calling the "sub" method of the "Sub" class inside the loop.
             finally the "sub" method is doing the subtraction calculation.
-            All this underlying functionality is hidden when the "calculate_res" method is called, showing how abstraction reduces the complexity of the program.
+            All this underlying functionality is hidden when the "calculate_res" method is called, showing how
+            abstraction reduces the complexity of the program.
 
             </p>
-
 
 
         </div>
@@ -119,13 +125,12 @@
             <br>
             <h6>Polymorphism</h6>
             <img src="{{ url_for('static', filename='images/polymorphism.png') }}" class="d-block w-100 item "
-                 alt="..." title="Example 1">
+                 alt="...">
 
             <br>
             <h6>Encapsulation</h6>
             <img src="{{ url_for('static', filename='images/encapsulation.png') }}" class="d-block w-100 item"
-                 alt="..." title="Example 2">
-
+                 alt="...">
 
 
             <div class="card mt-5" style="width: 18rem;">
@@ -145,13 +150,13 @@
                     <h5 class="card-title">Reference Links</h5>
                     <p>
                         <a href="https://www.geeksforgeeks.org/inheritance-in-python/">Inheritance
-                            </a> <br>
-                      <a href="https://www.geeksforgeeks.org/polymorphism-in-python/">Polymorphism
-                            </a><br>
+                        </a> <br>
+                        <a href="https://www.geeksforgeeks.org/polymorphism-in-python/">Polymorphism
+                        </a><br>
                         <a href="https://www.geeksforgeeks.org/encapsulation-in-python/">Encapsulation
-                            </a><br>
+                        </a><br>
                         <a href="https://www.geeksforgeeks.org/abstract-classes-in-python/">Abstraction
-                            </a>
+                        </a>
 
                     </p>
                 </div>

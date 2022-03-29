@@ -5,7 +5,6 @@
 // });
 
 
-
 // var btns =
 //     $(".navbar-nav .nav-link");
 //
@@ -42,24 +41,23 @@
 // });
 
 
-$(document).ready(function(){
+$(document).ready(function () {
     AddActive();
 });
 
 function AddActive() {
 
-    var pageUrl = location.href.split(location.host)[1].replace(/^\//,'');
+    var pageUrl = location.href.split(location.host)[1].replace(/^\//, '');
 
-    $(".navbar-nav li").each(function(index){
+    $(".navbar-nav li").each(function (index) {
         var divId = jQuery(this).attr("id");
-        if(pageUrl){
-            if(pageUrl.startsWith(divId)){
+        if (pageUrl) {
+            if (pageUrl.startsWith(divId)) {
 
                 $(this).addClass("current");
                 return false;
             }
-        }
-        else{
+        } else {
             $('#home').addClass("current");
             return false;
         }

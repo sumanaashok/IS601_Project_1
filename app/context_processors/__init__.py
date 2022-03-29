@@ -1,8 +1,10 @@
+"""This defines the Context Processors"""
 from os import getenv
 import datetime
 
 
 def utility_text_processors():
+    """This assigns the name and message context processors"""
     message = "Thank you for visiting my page"
     name = "Sumana\'s"
 

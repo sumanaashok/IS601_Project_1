@@ -15,10 +15,12 @@ class Calculator:
 
     @classmethod
     def create(cls, num_list):
+        """factory function"""
         return cls(num_list)
 
     @staticmethod
     def float_conversion(num_list):
+        """Converting to list of float"""
         list_float = []
         for num in num_list:
             list_float.append(float(num))
