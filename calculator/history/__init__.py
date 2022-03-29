@@ -1,54 +1,53 @@
-"""Calculation history Class"""
+"""History of calculations Class"""
 from calculator.calculations import Summation, Difference, Product, Divide
 
 
 class Calculations:
     """Calculations class manages the history of calculations"""
-    history = []
+    hist = []
 
     # pylint: disable=too-few-public-methods
     @staticmethod
-    def clear_history():
+    def clearing_history_calculations():
         """clear the history of calculations"""
-        Calculations.history.clear()
+        Calculations.hist.clear()
         return True
 
     @staticmethod
-    def count_history():
+    def count_hist():
         """get number of items in history"""
-        return len(Calculations.history)
+        return len(Calculations.hist)
 
     @staticmethod
-    def get_last_calculation_object():
-        """get last calculation"""
-        return Calculations.history[-1]
+    def last_calculation_object():
+        """get last calculation as object"""
+        return Calculations.hist[-1]
 
     @staticmethod
-    def get_last_calculation_result_value():
+    def last_calculation_result_value():
         """get last calculation"""
-        calculation = Calculations.get_last_calculation_object()
+        calculation = Calculations.last_calculation_object()
         return calculation.calculate_res()
 
     @staticmethod
-    def get_first_calculation():
+    def first_calculation():
         """get first calculation"""
-        return Calculations.history[0]
+        return Calculations.hist[0]
 
     @staticmethod
-    def get_calculation(num):
+    def fetch_calculation(num):
         """ get a specific calculation from history"""
-        return Calculations.history[num]
+        return Calculations.hist[num]
 
     @staticmethod
     def add_calculation(calculation):
         """ get a generic calculation from history"""
-        return Calculations.history.append(calculation)
+        return Calculations.hist.append(calculation)
 
     @staticmethod
     def add_addition_calculation(values):
         """create an addition and add object to history using factory method create"""
         Calculations.add_calculation(Summation.create(values))
-        # Get the result of the calculation
         return True
 
     @staticmethod
